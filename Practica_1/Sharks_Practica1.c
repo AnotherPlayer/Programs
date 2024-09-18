@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
 
 #include "Fun_ord.h"
 
@@ -24,6 +25,7 @@ void showArray(int *num){
 int main(){
 
 int opt, i=0;
+double time = 0;
 
 //Aceso al documento
     FILE *file = fopen("numeros.txt","r");
@@ -49,6 +51,8 @@ int opt, i=0;
 
     printf("Seleccione un metodo de ordenamiento:\n1.- Burbuja [1]\n2.- Inserccion [2]\n3.- Heap Sort [3]\n-->");
     scanf("%d",&opt);
+
+    clock_t begin = clock();
 
     switch(opt){
 
@@ -77,14 +81,18 @@ int opt, i=0;
             puts("La opcion que ingresaste no es valida\n");
         break;
 
-        
-
     }
+
+    clock_t end = clock();
+
+    time += (double)(end-begin) / CLOCKS_PER_SEC;
 
     if(num != NULL)
             showArray(num);
     else
-        puts("\nWTF");
+        puts("\nArreglo vacio");
+
+    printf("Tiempo de ejecución busqueda: %f s",time);
 
     free(num);
 
