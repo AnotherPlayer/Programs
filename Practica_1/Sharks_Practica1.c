@@ -17,7 +17,7 @@ void showArray(int *num){
     int i;
 
     for( i = 0; i < num_length; i++ )
-        printf("%d, ", num[i]);
+        printf("%d. %d\n",i+1, num[i]);
 
 }
 
