@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "Shark_Pract1.C": "cpp"
+        "Shark_Pract1.C": "cpp",
+        "stdlib.h": "c",
+        "fun_ord.h": "c"
     }
 }

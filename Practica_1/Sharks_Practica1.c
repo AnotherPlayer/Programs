@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-#include"Fun_ord.h"
+#include "Fun_ord.h"
 
 int num_length;
 
@@ -26,7 +26,7 @@ int main(){
 int opt, i=0;
 
 //Aceso al documento
-    FILE *file = fopen("C:/Users/HDavi/Documents/ESCOM/3° Semestre/Análisis y diseño de algoritmos/Programs/Practica_1/numeros.txt","r");
+    FILE *file = fopen("numeros.txt","r");
     
     if(file == NULL){
         perror("Error en la apertura del archivo");
@@ -34,10 +34,10 @@ int opt, i=0;
     }
 
 //Se declara un arreglo dinamico segun las nececidades del usuario
-    puts("Ingrese la cantidad de numeros que desea ordenar del documento:\n");
+    puts("Ingrese la cantidad de numeros que desea ordenar del documento:");
     scanf("%d",&num_length);
     int *num = (int *)malloc(num_length * sizeof(int));
-    
+
     if (num == NULL) {
         perror("Error al asignar memoria");
         fclose(file);
@@ -47,7 +47,7 @@ int opt, i=0;
 //Funcion para obtener los numeros deseados
     getArray(num,file);
 
-    printf("Seleccione un metodo de ordenamiento:\n1.- Burbuja [1]\n2.- Inserccion [2]\n3.- Heap Sort [3]");
+    printf("Seleccione un metodo de ordenamiento:\n1.- Burbuja [1]\n2.- Inserccion [2]\n3.- Heap Sort [3]\n-->");
     scanf("%d",&opt);
 
     switch(opt){
@@ -77,10 +77,14 @@ int opt, i=0;
             puts("La opcion que ingresaste no es valida\n");
         break;
 
-        if(num != NULL)
-            showArray(num);
+        
 
     }
+
+    if(num != NULL)
+            showArray(num);
+    else
+        puts("\nWTF");
 
     free(num);
 

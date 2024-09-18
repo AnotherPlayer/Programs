@@ -1,3 +1,5 @@
+#include<stdlib.h>
+
 //Burbuja
 void burbuja(int *num, int num_length){
 
@@ -31,7 +33,7 @@ void inserccion(int *num, int num_length){
                 num[i+1] = num[i];
                 i = i-1;
             }
-            
+
         num[i+1] = aux;
     }
 
