@@ -1,3 +1,4 @@
-void burbuja(int num[1000000], int n);
-void inserccion(int num[1000000], int n);
-void heapSort(int num[1000000], int n);
+void burbuja(int *num, int num_length);
+void inserccion(int *num, int num_length);
+void merge(int *arr, int p, int q, int r);
+void mergeSort(int *arr, int p, int r);

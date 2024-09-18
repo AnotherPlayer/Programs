@@ -64,6 +64,7 @@ int main(){
     int arr[10] = {  3, 67, 32, 76, 12, 89, 1, 56, 32, 16 };
     mergeSort( arr, 0, 9 );
 
+    //Imprimir arreglo
     int i;
     for( i = 0; i < 10; i++ ) {
         printf("%d, ", arr[i]);
