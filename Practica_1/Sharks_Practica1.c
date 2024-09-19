@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<unistd.h>
 #include<time.h>
 
 #include "Fun_ord.h"
@@ -49,7 +50,7 @@ double time = 0;
 //Funcion para obtener los numeros deseados
     getArray(num,file);
 
-    printf("Seleccione un metodo de ordenamiento:\n1.- Burbuja [1]\n2.- Inserccion [2]\n3.- Heap Sort [3]\n-->");
+    printf("Seleccione un metodo de ordenamiento:\n1.- Burbuja [1]\n2.- Inserccion [2]\n3.- Heap Sort [3]\n--> ");
     scanf("%d",&opt);
 
     clock_t begin = clock();
@@ -83,16 +84,19 @@ double time = 0;
 
     }
 
+    sleep(1);
     clock_t end = clock();
 
     time += (double)(end-begin) / CLOCKS_PER_SEC;
 
+    /*
     if(num != NULL)
             showArray(num);
     else
         puts("\nArreglo vacio");
+    */
 
-    printf("Tiempo de ejecución busqueda: %f s",time);
+    printf("Tiempo de ejecucion busqueda: %f s",time);
 
     free(num);
 
