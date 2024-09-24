@@ -28,7 +28,7 @@ int main(){
 int opt, i=0;
 double time = 0;
 
-//Aceso al documento
+//Acceso al documento
     FILE *file = fopen("numeros.txt","r");
     
     if(file == NULL){
