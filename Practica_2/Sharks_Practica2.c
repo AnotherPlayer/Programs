@@ -58,7 +58,7 @@ double time = 0;
 
     FILE *file;
 
-    puts("Seleccion un caso:\n1.- Mejor caso\n2.- Caso medio\n3.- Pero caso\n--> ");
+    puts("Seleccion un caso:\n1.- Mejor caso\n2.- Caso medio\n3.- Peor caso\n--> ");
     fflush(stdin);
     scanf("%d",&caso);
 
@@ -119,8 +119,6 @@ double time = 0;
 //Funcion para obtener los numeros deseados
     getArray(num,file);
 
-    printf("???\n");
-
     printf("Seleccione un metodo de ordenamiento:\n1.- Quick Sort [1]\n2.- Merge Sort [2]\n\n--> ");
     scanf("%d",&opt);
 
@@ -129,8 +127,9 @@ double time = 0;
 //Escoger un método de ordenamiento
     chooseOrd(num,opt);
 
-    sleep(1);
     clock_t end = clock();
+
+    sleep(1);
 
     time += (double)(end-begin) / CLOCKS_PER_SEC;
 

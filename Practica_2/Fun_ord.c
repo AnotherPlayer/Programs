@@ -43,7 +43,14 @@ void merge(int *arr, int p, int q, int r) {
     int n2 = r - q;
 
     // Crear arrays temporales
-    int L[n1], R[n2];
+    int *L = (int *)malloc(n1 * sizeof(int));
+    int *R = (int *)malloc(n2 * sizeof(int));
+
+    // Verifica si la asignación de memoria fue exitosa
+    /*if (!L || !R) {
+        fprintf(stderr, "Error de asignación de memoria\n");
+        exit(1);
+    }*/
 
     // Copiar datos a los arrays temporales L[] y R[]
     for (i = 0; i < n1; i++)
@@ -51,12 +58,12 @@ void merge(int *arr, int p, int q, int r) {
     for (j = 0; j < n2; j++)
         R[j] = arr[q + 1 + j];
 
-    // Combinar los arrays temporales de vuelta en arr[p..r]
+    // Combinar los arrays temporales de vuelta en arr[p..r] de mayor a menor
     i = 0;
     j = 0;
     k = p;
     while (i < n1 && j < n2) {
-        if (L[i] <= R[j]) {
+        if (L[i] >= R[j]) { // Cambia aquí para ordenar de mayor a menor
             arr[k] = L[i];
             i++;
         } else {
@@ -79,8 +86,13 @@ void merge(int *arr, int p, int q, int r) {
         j++;
         k++;
     }
+
+    // Liberar la memoria
+    free(L);
+    free(R);
 }
 
+// Función de ordenamiento por merge sort
 void mergeSort(int *arr, int p, int r) {
     if (p < r) {
         // Encuentra el punto medio del arreglo
