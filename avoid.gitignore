@@ -1,0 +1,4 @@
+*.exe
+*.rar
+.vscode
+output/
