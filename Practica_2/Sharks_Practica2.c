@@ -127,9 +127,10 @@ double time = 0;
 //Escoger un método de ordenamiento
     chooseOrd(num,opt);
 
+    sleep(1);
+
     clock_t end = clock();
 
-    sleep(1);
 
     time += (double)(end-begin) / CLOCKS_PER_SEC;
 
