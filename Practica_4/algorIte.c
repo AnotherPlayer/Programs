@@ -18,7 +18,7 @@ void factorialIte(int n){
 }
 
 // Function to print fibonacci series
-void printFib(int n) {
+void fibonacci(int n) {
     if (n < 1) {
         printf("Invalid Number of terms\n");
         return;
