@@ -19,7 +19,6 @@ int main(){
 int caso, dato, cond, i=0;
 double time = 0;
 
-
 //Aceso al documento
 
     FILE *file;
@@ -30,12 +29,12 @@ double time = 0;
                 exit(0);
            }
 
-//Usuario escoger numero
+//Usuario escoger numero a buscar
     printf("Seleccione un numero:\n");
     scanf("%d",&dato);
 
 //Se declara un arreglo dinamico segun las nececidades del usuario
-    puts("Ingrese la cantidad de numeros que desea ordenar del documento:");
+    puts("Ingrese la cantidad de numeros que desea buscar del documento:");
     scanf("%d",&num_length);
     
     int *num = (int *)malloc(num_length * sizeof(int));
