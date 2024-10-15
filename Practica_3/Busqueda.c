@@ -20,7 +20,7 @@ int busquedaBinaria( int arr[], int v, int i, int j ){
     
 	int k = ( i + j ) / 2;
     // Condicion de corte
-    if( i >= j ) return -1;
+    if( i > j ) return -1;
 
     if( arr[k] == v ) return k;
     
