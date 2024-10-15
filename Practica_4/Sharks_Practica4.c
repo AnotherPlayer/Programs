@@ -8,42 +8,42 @@
 
 int main(){
 
-    int chose,n;
+    int choose,n;
     double time;
 
     printf("\nIngrese longitud del problema: ");
     scanf("%d",&n);
 
     printf("Seleccione un algoritmo:\n\n[1] Factorial Iterativo\t [2] Factorial Recursivo\n[3] TOH Iterativo\t [4] TOH Recursivo\n[5] Fibonacci Iterativo\t [6] Fibonacci Recursivo\n-->");
-    scanf("%d",&chose);
+    scanf("%d",&choose);
 
     clock_t begin = clock();
 
-    switch (chose){
+    switch (choose){
 
     case 1:
         factorialIte(n);        
-    break;
-
-    case 2:
+        break;
         
-    break;
+    case 2:
+        factorialrec(n);
+        break;
 
     case 3:
-        
-    break;
+        //tohIterative(n); --> simplificar función parámetros
+        break;
 
     case 4:
-        
-    break;
+        hanoi(n,'x','y','z');
+        break;
 
     case 5:
-        
-    break;
+        fibonacci(n);
+        break;
 
     case 6:
-        
-    break;
+        fiborec(n);
+        break;
     
     default:
         break;
@@ -55,7 +55,7 @@ int main(){
 
     time += (double)(end-begin) / CLOCKS_PER_SEC;
 
-    printf("Tiempo de ejecucion algoritmo: %f s\n-----------------------------------------",time);
+    printf("Tiempo de ejecucion algoritmo: %f s\n-----------------------------------------\n",time);
 
 
 }

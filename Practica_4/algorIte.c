@@ -54,16 +54,15 @@ void fibonacci(int n) {
 //TORRES DE HAOI
 
 // A structure to represent a stack 
-struct Stack 
-{ 
+struct Stack { 
 unsigned capacity; 
 int top; 
 int *array; 
 }; 
 
 // function to create a stack of given capacity. 
-struct Stack* createStack(unsigned capacity) 
-{ 
+struct Stack* createStack(unsigned capacity) { 
+	
 	struct Stack* stack = 
 		(struct Stack*) malloc(sizeof(struct Stack)); 
 	stack -> capacity = capacity; 
