@@ -6,17 +6,11 @@
 #include"algorIte.h"
 #include"algorRec.h"
 
-struct Stack{ 
-unsigned capacity; 
-int top; 
-int *array; 
-}; 
-
 int main(){
 
     int choose,n;
     double time;
-    struct Stack src,aux,dest;
+    int check;
 
     printf("\nIngrese longitud del problema: ");
     scanf("%d",&n);
@@ -29,20 +23,23 @@ int main(){
     switch (choose){
 
     case 1:
-        factorialIte(n);        
+        check = factorialIte(n);
+        printf("Factorial %d: %d\n",n,check);   
         break;
         
     case 2:
-        factorialrec(n);
+        check = factorialrec(n);
+        printf("Factorial %d: %d\n",n,check);
         break;
 
     case 3:
 
-        tohIterative(n,Stack src, Stack aux, Stack dest);
+        torresDeHanoi(n);
+
         break;
 
     case 4:
-        hanoi(n,'x','y','z');
+        hanoi(n,'A','B','C');
         break;
 
     case 5:
@@ -50,7 +47,8 @@ int main(){
         break;
 
     case 6:
-        fiborec(n);
+        check = fiborec(n);
+        printf("Factorial %d: %d\n",n,check);
         break;
     
     default:
@@ -63,7 +61,7 @@ int main(){
 
     time += (double)(end-begin) / CLOCKS_PER_SEC;
 
-    printf("Tiempo de ejecucion algoritmo: %f s\n-----------------------------------------\n",time);
+    printf("Tiempo de ejecucion algoritmo: %lf s\n-----------------------------------------\n",time);
 
 
 }

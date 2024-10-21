@@ -4,7 +4,7 @@
 #include <limits.h> 
 
 //Factorial iterativo
-void factorialIte(int n){
+int factorialIte(int n){
 
     int x=1,i;
 
@@ -14,14 +14,17 @@ void factorialIte(int n){
     else{
         for(i=1 ; i<=n ; i++)
             x*=i;
-    }//hola
+    }
 
-    printf("Factorial %d: %d\n",n,x);
+	return x;
 
 }
 
 // Fibonacci iterativo
 void fibonacci(int n) {
+
+	int curr;
+
     if (n < 1) {
         printf("Invalid Number of terms\n");
         return;
@@ -38,16 +41,16 @@ void fibonacci(int n) {
     if (n == 1)
         return;
 
-    printf("%d ", prev1);
-
     // Print 3rd number onwards using
     // the recursive formula
-    for (int i = 3; i <= n; i++) {
-        int curr = prev1 + prev2;
+    for (int i = 2; i <= n; i++) {
+        curr = prev1 + prev2;
         prev2 = prev1;
         prev1 = curr;
-        printf("%d ", curr);
+        //printf("%d ", curr);
     }
+
+	printf("Fibonacci %d: %d\n",n,curr);
 }
 
 
