@@ -3,6 +3,7 @@
 #include <math.h> 
 #include <limits.h> 
 
+//Factorial iterativo
 void factorialIte(int n){
 
     int x=1,i;
@@ -19,7 +20,7 @@ void factorialIte(int n){
 
 }
 
-// Function to print fibonacci series
+// Fibonacci iterativo
 void fibonacci(int n) {
     if (n < 1) {
         printf("Invalid Number of terms\n");
@@ -51,7 +52,7 @@ void fibonacci(int n) {
 
 
 
-//TORRES DE HAOI
+//TORRES DE HAOI Iterativo
 
 // A structure to represent a stack 
 struct Stack { 
@@ -61,32 +62,27 @@ int *array;
 }; 
 
 // function to create a stack of given capacity. 
-struct Stack* createStack(unsigned capacity) { 
+struct Stack* createStack(unsigned capacity){ 
 	
-	struct Stack* stack = 
-		(struct Stack*) malloc(sizeof(struct Stack)); 
+	struct Stack* stack = (struct Stack*) malloc(sizeof(struct Stack)); 
 	stack -> capacity = capacity; 
 	stack -> top = -1; 
-	stack -> array = 
-		(int*) malloc(stack -> capacity * sizeof(int)); 
+	stack -> array = (int*) malloc(stack -> capacity * sizeof(int)); 
 	return stack; 
 } 
 
 // Stack is full when top is equal to the last index 
-int isFull(struct Stack* stack) 
-{ 
-return (stack->top == stack->capacity - 1); 
+int isFull(struct Stack* stack){ 
+	return (stack->top == stack->capacity - 1); 
 } 
 
 // Stack is empty when top is equal to -1 
-int isEmpty(struct Stack* stack) 
-{ 
-return (stack->top == -1); 
+int isEmpty(struct Stack* stack){
+	return (stack->top == -1); 
 } 
 
 
-void push(struct Stack *stack, int item) 
-{ 
+void push(struct Stack *stack, int item){ 
 	if (isFull(stack)) 
 		return; 
 	stack -> array[++stack -> top] = item; 
@@ -94,53 +90,46 @@ void push(struct Stack *stack, int item)
 
 // Function to remove an item from stack. It 
 // decreases top by 1 
-int pop(struct Stack* stack) 
-{ 
+int pop(struct Stack* stack){ 
 	if (isEmpty(stack)) 
 		return INT_MIN; 
 	return stack -> array[stack -> top--]; 
 } 
 
 //Function to show the movement of disks 
-void moveDisk(char fromPeg, char toPeg, int disk) 
-{ 
+void moveDisk(char fromPeg, char toPeg, int disk){ 
 	printf("Move the disk %d from \'%c\' to \'%c\'\n", 
 		disk, fromPeg, toPeg); 
 }
 
 // Function to implement legal movement between 
 // two poles 
-void moveDisksBetweenTwoPoles(struct Stack *src, 
-			struct Stack *dest, char s, char d) 
-{ 
+void moveDisksBetweenTwoPoles(struct Stack *src, struct Stack *dest, char s, char d){ 
+
 	int pole1TopDisk = pop(src); 
 	int pole2TopDisk = pop(dest); 
 
 	// When pole 1 is empty 
-	if (pole1TopDisk == INT_MIN) 
-	{ 
+	if (pole1TopDisk == INT_MIN){ 
 		push(src, pole2TopDisk); 
 		moveDisk(d, s, pole2TopDisk); 
 	} 
 
 	// When pole2 pole is empty 
-	else if (pole2TopDisk == INT_MIN) 
-	{ 
+	else if (pole2TopDisk == INT_MIN){ 
 		push(dest, pole1TopDisk); 
 		moveDisk(s, d, pole1TopDisk); 
 	} 
 
 	// When top disk of pole1 > top disk of pole2 
-	else if (pole1TopDisk > pole2TopDisk) 
-	{ 
+	else if (pole1TopDisk > pole2TopDisk){ 
 		push(src, pole1TopDisk); 
 		push(src, pole2TopDisk); 
 		moveDisk(d, s, pole2TopDisk); 
 	} 
 
 	// When top disk of pole1 < top disk of pole2 
-	else
-	{ 
+	else{ 
 		push(dest, pole2TopDisk); 
 		push(dest, pole1TopDisk); 
 		moveDisk(s, d, pole1TopDisk); 
@@ -148,17 +137,14 @@ void moveDisksBetweenTwoPoles(struct Stack *src,
 } 
 
 //Function to implement TOH puzzle 
-void tohIterative(int num_of_disks, struct Stack 
-			*src, struct Stack *aux, 
-			struct Stack *dest) 
-{ 
+void tohIterative(int num_of_disks, struct Stack *src, struct Stack *aux, struct Stack *dest){ 
+	
 	int i, total_num_of_moves; 
 	char s = 'S', d = 'D', a = 'A'; 
 
 	//If number of disks is even, then interchange 
 	//destination pole and auxiliary pole 
-	if (num_of_disks % 2 == 0) 
-	{ 
+	if (num_of_disks % 2 == 0){ 
 		char temp = d; 
 		d = a; 
 		a = temp; 
@@ -169,8 +155,7 @@ void tohIterative(int num_of_disks, struct Stack
 	for (i = num_of_disks; i >= 1; i--) 
 		push(src, i); 
 
-	for (i = 1; i <= total_num_of_moves; i++) 
-	{ 
+	for (i = 1; i <= total_num_of_moves; i++){ 
 		if (i % 3 == 1) 
 		moveDisksBetweenTwoPoles(src, dest, s, d); 
 

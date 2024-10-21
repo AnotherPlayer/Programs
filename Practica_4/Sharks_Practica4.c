@@ -6,10 +6,17 @@
 #include"algorIte.h"
 #include"algorRec.h"
 
+struct Stack{ 
+unsigned capacity; 
+int top; 
+int *array; 
+}; 
+
 int main(){
 
     int choose,n;
     double time;
+    struct Stack
 
     printf("\nIngrese longitud del problema: ");
     scanf("%d",&n);
@@ -30,7 +37,7 @@ int main(){
         break;
 
     case 3:
-        //tohIterative(n); --> simplificar función parámetros
+        tohIterative(n,Stack src, Stack aux, Stack dest); --> simplificar función parámetros
         break;
 
     case 4:
