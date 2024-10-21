@@ -16,7 +16,7 @@ int main(){
 
     int choose,n;
     double time;
-    struct Stack
+    struct Stack src,aux,dest;
 
     printf("\nIngrese longitud del problema: ");
     scanf("%d",&n);
@@ -37,7 +37,8 @@ int main(){
         break;
 
     case 3:
-        tohIterative(n,Stack src, Stack aux, Stack dest); --> simplificar función parámetros
+
+        tohIterative(n,Stack src, Stack aux, Stack dest);
         break;
 
     case 4:
