@@ -4,8 +4,6 @@
 
 int factorialrec(int n){
 
-  int x;
-
   if (n == 0 || n == 1)
     return 1;
   
