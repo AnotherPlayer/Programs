@@ -1,18 +1,20 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void MaxMin(int *arr, int Max, int min){
+// Iterativo
+void MaxMin(int *arr, int Max, int Min, int n){
   Max= arr[1];
   Min= arr[2];
   for(int i=0;i<n;i++){
     if(arr[i]>Max)
         Max=arr[i];
     else if(arr[i]<Min)
-      Min=arr[i]
+      Min=arr[i];
   }
-  print("Este es el maximo: %d\nEste es el minimo: %d",Max,Min);
+  printf("Este es el maximo: %d\nEste es el minimo: %d",Max,Min);
 }
 
+//Recursivo
 void MaxMinDV(int A[], int i, int j, int *Max, int *Min) {
     int Max1, Min1, Max2, Min2, mit;
     
@@ -44,19 +46,36 @@ void MaxMinDV(int A[], int i, int j, int *Max, int *Min) {
 
 
 int main(){
-    int A[] = {3, 5, 1, 8, 2, 9, 4, 7};
+
+    int num_length,choose;
+
+    puts("Ingrese la cantidad de numeros:");
+    scanf("%d",&num_length);
+    
+    int *A = (int *)malloc(num_length * sizeof(int));
+
     int n = sizeof(A) / sizeof(A[0]);
     int Max, Min;
 
-    MaxMin(*arr,Max,Min);
+    switch (choose){
 
-    MaxMinDV(A, 0, n - 1, &Max, &Min);
+    case 1:
 
-    printf("El valor máximo es: %d\n", Max);
-    printf("El valor mínimo es: %d\n", Min);
+        MaxMin(A,Max,Min,num_length);
+
+        break;
+    
+    case 2:
+
+        MaxMinDV(A, 0, n - 1, &Max, &Min);
+
+    default:
+        break;
+    }
+
+    printf("El valor maximo es: %d\n", Max);
+    printf("El valor minimo es: %d\n", Min);
 
     return 0;
 }
 
-
-}

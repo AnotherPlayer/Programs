@@ -2,18 +2,18 @@
 #include <math.h> 
 #include <stdlib.h> 
 
-int factorialrec(int n){
+double factorialrec(int n){
 
   if (n == 0 || n == 1)
     return 1;
   
-  return n*factorialrec(n-1);
+  return (double)(n*factorialrec(n-1));
 }
 
-int fiborec(int n){
+double fiborec(int n){
   if(n<2)
     return n;
-  return (fiborec(n-1)+fiborec(n-2));
+  return (double)(fiborec(n-1)+fiborec(n-2));
 }
 
 

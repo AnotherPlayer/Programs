@@ -10,12 +10,12 @@ int main(){
 
     int choose,n;
     double time;
-    int check;
+    double check;
 
     printf("\nIngrese longitud del problema: ");
     scanf("%d",&n);
 
-    printf("Seleccione un algoritmo:\n\n[1] Factorial Iterativo\t [2] Factorial Recursivo\n[3] TOH Iterativo\t [4] TOH Recursivo\n[5] Fibonacci Iterativo\t [6] Fibonacci Recursivo\n-->");
+    printf("Seleccione un algoritmo:\n\n[1] Factorial Iterativo\t [2] Factorial Recursivo\n[3] TOH Iterativo\t [4] TOH Recursivo\n[5] Fibonacci Iterativo\t [6] Fibonacci Recursivo\n--> ");
     scanf("%d",&choose);
 
     clock_t begin = clock();
@@ -24,12 +24,12 @@ int main(){
 
     case 1:
         check = factorialIte(n);
-        printf("Factorial %d: %d\n",n,check);   
+        printf("Factorial %d: %f\n",n,check);   
         break;
         
     case 2:
         check = factorialrec(n);
-        printf("Factorial %d: %d\n",n,check);
+        printf("Factorial %d: %f\n",n,check);
         break;
 
     case 3:
@@ -48,7 +48,7 @@ int main(){
 
     case 6:
         check = fiborec(n);
-        printf("Factorial %d: %d\n",n,check);
+        printf("Factorial %d: %f\n",n,check);
         break;
     
     default:

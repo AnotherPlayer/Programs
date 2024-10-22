@@ -4,16 +4,19 @@
 #include <limits.h> 
 
 //Factorial iterativo
-int factorialIte(int n){
+double factorialIte(int n){
 
-    int x=1,i;
+    int i;
+    double x=1;
 
     if(n==0 || n==1)
         x=1;
     
     else{
-        for(i=1 ; i<=n ; i++)
-            x*=i;
+        for(i=1 ; i<=n ; i++){
+            x*=(double)i;
+            printf("  %f\n",x);
+        }
     }
 
 	return x;
@@ -23,7 +26,7 @@ int factorialIte(int n){
 // Fibonacci iterativo
 void fibonacci(int n) {
 
-	int curr;
+	double curr;
 
     if (n < 1) {
         printf("Invalid Number of terms\n");
@@ -31,10 +34,8 @@ void fibonacci(int n) {
     }
 
     // When number of terms is greater than 0
-    int prev1 = 1;
-    int prev2 = 0;
-
-    printf("%d ", prev2);
+    double prev1 = 1;
+    double prev2 = 0;
 
     // If n is 1, then we do not need to
     // proceed further
@@ -50,7 +51,7 @@ void fibonacci(int n) {
         //printf("%d ", curr);
     }
 
-	printf("Fibonacci %d: %d\n",n,curr);
+	printf("Fibonacci %d: %f\n",n,curr);
 }
 
 
