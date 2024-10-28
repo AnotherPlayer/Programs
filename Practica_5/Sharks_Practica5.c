@@ -90,13 +90,13 @@ int main(){
     switch (choose){
 
     case 1:
-        printf("itera_\n");
+        printf("iterativo: \n");
         MaxMin(A,&Max,&Min,num_length);
 
         break;
     
     case 2:
-        printf("recur\n");
+        printf("recursivo: \n");
         MaxMinDV(A, 0, num_length - 1, &Max, &Min);
 
     default:
