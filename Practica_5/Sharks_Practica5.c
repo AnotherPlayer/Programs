@@ -2,6 +2,8 @@
 #include<stdlib.h>
 #include <time.h>
 
+//Testing push
+
 // Iterativo
 void MaxMin(int *arr, int *Max, int *Min, int n){
     *Max = arr[0];
@@ -58,7 +60,7 @@ int main(){
 
     int choose;
     //Aceso al documento
-    FILE *file = fopen("C:/Users/brand/OneDrive/Documentos/Semestre_3/ADA/Practica_5/numeros10millones.txt","r");
+    FILE *file = fopen("numeros.txt","r");
     
     if(file == NULL){
         perror("Error en la apertura del archivo");
