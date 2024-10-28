@@ -83,6 +83,7 @@ void getArray(int *num, FILE *file){
 }
 
 
+int main(){
 int choose;
     //Aceso al documento
     FILE *file = fopen("numeros.txt","r");
@@ -116,13 +117,13 @@ int choose;
 
     case 1:
         printf("itera_\n");
-        printf("%d\n", maxSubArraySum(arr, 0, num_length - 1));
+        printf("%d\n", maxSubArraySum(A, 0, num_length - 1));
 
         break;
     
     case 2:
         printf("recur\n");
-        printf("%d", maxSubarraySumite(arr,num_length));
+        printf("%d", maxSubarraySumite(A,num_length));
 
     default:
         break;
