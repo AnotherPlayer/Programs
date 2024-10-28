@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include <limits.h>
 
 int maxSubarraySumite(int arr[], int size) {
@@ -71,11 +73,62 @@ int maxSubArraySum(int arr[], int l, int h) {
                  maxCrossingSum(arr, l, m, h)); 
 }
 
-int main() {
-    int arr[] = {2, 3, -8, 7, -1, 2, 3};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    printf("%d\n", maxSubArraySum(arr, 0, size - 1));
-    printf("%d", maxSubarraySumite(arr, size));
-    return 0;
+int num_length;
+
+void getArray(int *num, FILE *file){
+    int i;
+    for(i=0 ; i<num_length ; i++){
+        fscanf(file, "%d", &num[i]);
+    };
 }
 
+
+int choose;
+    //Aceso al documento
+    FILE *file = fopen("numeros.txt","r");
+    
+    if(file == NULL){
+        perror("Error en la apertura del archivo");
+        return 1;
+    }
+
+    //Se declara un arreglo dinamico segun las nececidades del usuario
+    puts("Ingrese el tamano del problema(Tamano del arreglo):");
+    scanf("%d",&num_length);
+    int *A = (int *)malloc(num_length * sizeof(int));
+
+    if (A == NULL) {
+        perror("Error al asignar memoria");
+        fclose(file);
+    }
+
+    //Funcion para obtener los numeros deseados
+    getArray(A,file);
+    fclose(file);
+    int Max, Min;
+    puts("Este programa obtiene la suma maxima de un subarreglo\n1.Iterativo [1]\n2.Recursivo [2]\n");
+    scanf("%d",&choose);
+
+
+    clock_t start = clock();
+    sleep(1);
+    switch (choose){
+
+    case 1:
+        printf("itera_\n");
+        printf("%d\n", maxSubArraySum(arr, 0, num_length - 1));
+
+        break;
+    
+    case 2:
+        printf("recur\n");
+        printf("%d", maxSubarraySumite(arr,num_length));
+
+    default:
+        break;
+    }
+    clock_t end = clock();  // Finaliza el conteo de tiempo
+    printf("Tiempo de ejecucion: %.8f segundos\n", (double)(end - start) / CLOCKS_PER_SEC);
+
+    return 0;
+}
