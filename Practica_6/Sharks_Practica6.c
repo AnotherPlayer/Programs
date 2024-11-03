@@ -3,6 +3,8 @@
 #include <time.h>
 #include <limits.h>
 
+
+    //Algoritmo Kadame
 int maxSubarraySumite(int arr[], int size) {
     int maxSum = arr[0];
     // Outer loop for starting point of subarray
@@ -18,6 +20,9 @@ int maxSubarraySumite(int arr[], int size) {
     }
     return maxSum;
 }
+
+    //Algoritmo divide y venceras
+
 // A utility function to find maximum of two integers 
 int max(int a, int b) { 
     return (a > b) ? a : b; 
@@ -114,13 +119,13 @@ int choose;
     switch (choose){
 
     case 1:
-        printf("iteracion: ");
+        printf("Iteracion: ");
         printf("%d", maxSubArraySum(A, 0, num_length - 1));
 
         break;
     
     case 2:
-        printf("recurcion: ");
+        printf("Recurcion: ");
         printf("%d", maxSubarraySumite(A,num_length));
 
     default:
