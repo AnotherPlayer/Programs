@@ -68,9 +68,7 @@ int maxSubArraySum(int arr[], int l, int h) {
         a) Maximum subarray sum in left half 
         b) Maximum subarray sum in right half 
         c) Maximum subarray sum such that the subarray crosses the midpoint */
-    return max3(maxSubArraySum(arr, l, m - 1), 
-                 maxSubArraySum(arr, m + 1, h), 
-                 maxCrossingSum(arr, l, m, h)); 
+    return max3(maxSubArraySum(arr, l, m - 1),maxSubArraySum(arr, m + 1, h),maxCrossingSum(arr, l, m, h)); 
 }
 
 int num_length;
@@ -116,20 +114,20 @@ int choose;
     switch (choose){
 
     case 1:
-        printf("itera_\n");
-        printf("%d\n", maxSubArraySum(A, 0, num_length - 1));
+        printf("iteracion: ");
+        printf("%d", maxSubArraySum(A, 0, num_length - 1));
 
         break;
     
     case 2:
-        printf("recur\n");
+        printf("recurcion: ");
         printf("%d", maxSubarraySumite(A,num_length));
 
     default:
         break;
     }
     clock_t end = clock();  // Finaliza el conteo de tiempo
-    printf("Tiempo de ejecucion: %.8f segundos\n", (double)(end - start) / CLOCKS_PER_SEC);
+    printf("\nTiempo de ejecucion: %.8f segundos\n", (double)(end - start) / CLOCKS_PER_SEC);
 
     return 0;
 }
