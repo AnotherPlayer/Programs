@@ -120,13 +120,14 @@ int choose;
 
     case 1:
         printf("Iteracion: ");
-        printf("%d", maxSubArraySum(A, 0, num_length - 1));
+        printf("%d", maxSubarraySumite(A,num_length));
 
         break;
     
     case 2:
         printf("Recurcion: ");
-        printf("%d", maxSubarraySumite(A,num_length));
+        printf("%d", maxSubArraySum(A, 0, num_length - 1));
+        
 
     default:
         break;
