@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
 // Helper function to make two strings of equal length by adding leading zeros
 int makeEqualLength(char **str1, char **str2);
