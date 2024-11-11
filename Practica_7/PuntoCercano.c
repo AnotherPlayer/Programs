@@ -7,7 +7,7 @@
 #include <math.h>
  
 // A structure to represent a Point in 2D plane
-typedef struct {
+struct Point{
     int x, y;
 }Point;
  
@@ -15,21 +15,21 @@ typedef struct {
    Refer: http://www.cplusplus.com/reference/clibrary/cstdlib/qsort/ */
  
 // Needed to sort array of points according to X coordinate
-int compareX(const void* a, const void* b)
-{
+int compareX(const void* a, const void* b){
+
     Point *p1 = (Point *)a,  *p2 = (Point *)b;
     return (p1->x - p2->x);
 }
 // Needed to sort array of points according to Y coordinate
-int compareY(const void* a, const void* b)
-{
+int compareY(const void* a, const void* b){
+
     Point *p1 = (Point *)a,   *p2 = (Point *)b;
     return (p1->y - p2->y);
 }
  
 // A utility function to find the distance between two points
-float dist(Point p1, Point p2)
-{
+float dist(Point p1, Point p2){
+
     return sqrt( (p1.x - p2.x)*(p1.x - p2.x) +
                  (p1.y - p2.y)*(p1.y - p2.y)
                );

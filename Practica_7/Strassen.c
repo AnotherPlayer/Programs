@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ROW_1 4
-#define COL_1 4
-#define ROW_2 4
-#define COL_2 4
+//#define ROW_1 4
+//#define COL_1 4
+//#define ROW_2 4
+//#define COL_2 4
 
 void print(const char* display, int matrix[][COL_1], int start_row, int start_column, int end_row, int end_column) {
     printf("\n%s =>\n", display);
@@ -25,7 +25,7 @@ void add_matrix(int matrix_A[][COL_1], int matrix_B[][COL_1], int matrix_C[][COL
     }
 }
 
-void multiply_matrix(int matrix_A[][COL_1], int matrix_B[][COL_2], int result_matrix[][COL_2]) {
+void multiply_matrix(int matrix_A[ROW_1][COL_1], int matrix_B[ROW_2][COL_2], int result_matrix[ROW_2][COL_2]) {
     int col_1 = COL_1;
     int row_1 = ROW_1;
     int col_2 = COL_2;
