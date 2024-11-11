@@ -7,10 +7,9 @@
 #include <math.h>
  
 // A structure to represent a Point in 2D plane
-struct Point
-{
+typedef struct {
     int x, y;
-};
+}Point;
  
 /* Following two functions are needed for library function qsort().
    Refer: http://www.cplusplus.com/reference/clibrary/cstdlib/qsort/ */
