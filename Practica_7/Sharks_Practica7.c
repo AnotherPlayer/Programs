@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 #include <limits.h>
 
@@ -34,7 +35,7 @@ int main() {
     switch (option) {
         case 1:
             // Karatsuba
-            multiply(cant, cant);  // Asegurarse de que la función 'multiply' recibe enteros, no chars
+            multiply(str, cant);  // Asegurarse de que la función 'multiply' recibe enteros, no chars
             break;
 
         case 2: {
