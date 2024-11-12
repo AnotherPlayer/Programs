@@ -35,7 +35,11 @@ int main() {
     switch (option) {
         case 1:
             // Karatsuba
-            multiply(str, cant);  // Asegurarse de que la función 'multiply' recibe enteros, no chars
+
+            char str[12];
+            itoa(cant, str, 10);
+
+            printf("Resultado Karatsuba: %ld\n", multiply(strdup(str), strdup(str)));
             break;
 
         case 2: {
@@ -54,11 +58,22 @@ int main() {
 
         case 3: {
             // Strassen
-            int A[cant][cant];
-            int B[cant][cant];
-            int C[cant][cant];
+            int **matrix_A = create_matrix(cant, cant);
+            int **matrix_B = create_matrix(cant, cant);
 
-            multiply_matrix(A, B, C);  // Llama a la función 'multiply_matrix' con las matrices A, B y C
+            int init_A[cant][cant];
+            int init_B[cant][cant];
+
+            for (int i = 0; i < ROW_1; i++) {
+                for (int j = 0; j < COL_1; j++) {
+                    matrix_A[i][j] = init_A[i][j];
+                    matrix_B[i][j] = init_B[i][j];
+                }
+            }
+
+            int **result_matrix = multiply_matrix(matrix_A, matrix_B, cant);
+            print("Result Matrix", result_matrix, 0, 0, cant - 1, cant - 1);
+
             break;
         }
 
